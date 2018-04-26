@@ -209,7 +209,7 @@ func (d DirectorImpl) DiffConfig(configType string, name string, manifest []byte
 		return ConfigDiff{}, err
 	}
 
-	return NewConfigDiff(resp.Diff), nil
+	return NewConfigDiffWithFromId(resp.Diff, resp.From["id"]), nil
 }
 
 func (c Client) DiffConfig(manifest []byte) (ConfigDiffResponse, error) {

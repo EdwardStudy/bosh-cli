@@ -15,7 +15,8 @@ type ConfigDiff struct {
 }
 
 type ConfigDiffResponse struct {
-	Diff [][]interface{} `json:"diff"`
+	Diff [][]interface{}   `json:"diff"`
+	From map[string]string `json:"from"`
 }
 
 func NewConfigDiffWithFromId(diff [][]interface{}, fromId string) ConfigDiff {
